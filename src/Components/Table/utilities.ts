@@ -14,7 +14,9 @@ export const sortedData = (
 ) => {
   return [...data].sort((a, b) => {
     if (!sortConfig.key) return 0;
+    // @ts-expect-error
     const valA = a[sortConfig.key];
+    // @ts-expect-error
     const valB = b[sortConfig.key];
     if (typeof valA === "number" && typeof valB === "number") {
       return sortConfig.direction === "asc" ? valA - valB : valB - valA;

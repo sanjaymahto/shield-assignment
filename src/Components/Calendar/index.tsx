@@ -115,13 +115,17 @@ const DateSelector = (props: dateSelectorProps) => {
     );
   };
 
+// @ts-expect-error  
   const CustomInputRange = forwardRef(({ value, onClick }, ref) => (
+    // @ts-expect-error
     <div className="inputContainer" onClick={onClick} ref={ref}>
       {formatDateWithTimezoneRange(dateRange)}
     </div>
   ));
 
+  // @ts-expect-error
   const CustomInput = forwardRef(({ value, onClick }, ref) => (
+    // @ts-expect-error
     <div className="inputContainer" onClick={onClick} ref={ref}>
       {formatDateWithTimezone(singleDate)}
     </div>

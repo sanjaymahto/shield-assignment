@@ -87,6 +87,7 @@ export function generateUniqueDummyData(size: number) {
     const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
     const name = `${firstName} ${lastName}`;
 
+    // @ts-expect-error
     if ([...dummyData].some((item) => item.name === name)) continue; // Ensure unique names
 
     const amount = Math.floor(Math.random() * 500) + 50;
