@@ -1,0 +1,97 @@
+.table-container {
+  position: relative;
+  width: 60vw;
+  margin: 20px auto;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+  width: 20vw;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f9f9f9;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+  z-index: 1;
+}
+
+.custom-table th {
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-table th:hover {
+  background: #0056b3;
+}
+
+.custom-table tbody tr:nth-child(odd) {
+  background: #0a0909;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background: #262424;
+}
+
+.custom-table tbody tr:hover {
+  background: #0a0808;
+  transition: background 0.3s ease;
+}
+
+.paid {
+  color: green;
+  font-weight: bold;
+}
+
+.pending {
+  color: orange;
+  font-weight: bold;
+}
+
+.failed {
+  color: red;
+  font-weight: bold;
+}
+
+/* Shimmer Effect */
+.shimmer-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.shimmer-row {
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
