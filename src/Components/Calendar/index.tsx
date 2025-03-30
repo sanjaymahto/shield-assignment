@@ -1,4 +1,4 @@
-import { forwardRef, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import moment from "moment-timezone";
 import {
@@ -23,7 +23,7 @@ const DateSelector = (props: dateSelectorProps) => {
 
   const defaultStartDate = new Date();
   const defaultEndDate = new Date();
-  defaultEndDate.setDate(defaultStartDate.getDate() + 7);
+  defaultEndDate.setDate(defaultStartDate.getDate() + MAX_DAYS_ALLOWED);
 
   const [isRange, setIsRange] = useState<boolean>(true);
   const [singleDate, setSingleDate] = useState<Date | null>(null);
@@ -130,6 +130,13 @@ const DateSelector = (props: dateSelectorProps) => {
       {formatDateWithTimezone(singleDate)}
     </div>
   ));
+
+  useEffect(() => {
+    setCalendarRange({
+      startDate: formatDate(defaultStartDate),
+      endDate: formatDate(defaultEndDate)
+    })
+  }, [])
 
   return (
     <div className="dateWrapper">
